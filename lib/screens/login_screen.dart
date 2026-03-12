@@ -227,7 +227,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
                     shape: BoxShape.circle,
                     gradient: RadialGradient(
                       colors: [
-                        AppTheme.goldPrimary.withOpacity(0.15),
+                        AppTheme.goldPrimary.withValues(alpha: 0.15),
                         Colors.transparent,
                       ],
                     ),
@@ -244,7 +244,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
                     shape: BoxShape.circle,
                     gradient: RadialGradient(
                       colors: [
-                        AppTheme.goldPrimary.withOpacity(0.1),
+                        AppTheme.goldPrimary.withValues(alpha: 0.1),
                         Colors.transparent,
                       ],
                     ),
@@ -259,7 +259,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
                     end: Alignment.bottomCenter,
                     colors: [
                       Colors.transparent,
-                      Colors.black.withOpacity(0.3),
+                      Colors.black.withValues(alpha: 0.3),
                     ],
                   ),
                 ),
@@ -320,7 +320,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
           'قم بتسجيل الدخول للمتابعة',
           style: TextStyle(
             fontSize: 16,
-            color: Colors.white.withOpacity(0.7),
+            color: Colors.white.withValues(alpha: 0.7),
             fontFamily: 'Changa',
           ),
         ),
@@ -332,7 +332,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
     return Container(
       padding: const EdgeInsets.all(4),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.1),
+        color: Colors.white.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
@@ -380,14 +380,14 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
           children: [
             Icon(
               icon,
-              color: isSelected ? Colors.black : Colors.white.withOpacity(0.7),
+              color: isSelected ? Colors.black : Colors.white.withValues(alpha: 0.7),
               size: 28,
             ),
             const SizedBox(height: 8),
             Text(
               label,
               style: TextStyle(
-                color: isSelected ? Colors.black : Colors.white.withOpacity(0.7),
+                color: isSelected ? Colors.black : Colors.white.withValues(alpha: 0.7),
                 fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
                 fontSize: 14,
                 fontFamily: 'Changa',
@@ -402,10 +402,10 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
   Widget _buildPhoneField() {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.1),
+        color: Colors.white.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: Colors.white.withOpacity(0.2),
+          color: Colors.white.withValues(alpha: 0.2),
         ),
       ),
       child: TextFormField(
@@ -420,7 +420,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
         decoration: InputDecoration(
           hintText: 'رقم الموبايل',
           hintStyle: TextStyle(
-            color: Colors.white.withOpacity(0.5),
+            color: Colors.white.withValues(alpha: 0.5),
             fontFamily: 'Changa',
           ),
           prefixIcon: const Icon(
@@ -446,10 +446,10 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
   Widget _buildPasswordField() {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.1),
+        color: Colors.white.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: Colors.white.withOpacity(0.2),
+          color: Colors.white.withValues(alpha: 0.2),
         ),
       ),
       child: TextFormField(
@@ -464,7 +464,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
         decoration: InputDecoration(
           hintText: 'كلمة المرور',
           hintStyle: TextStyle(
-            color: Colors.white.withOpacity(0.5),
+            color: Colors.white.withValues(alpha: 0.5),
             fontFamily: 'Changa',
           ),
           prefixIcon: const Icon(
@@ -474,7 +474,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
           suffixIcon: IconButton(
             icon: Icon(
               _isPasswordVisible ? Icons.visibility_off : Icons.visibility,
-              color: Colors.white.withOpacity(0.5),
+              color: Colors.white.withValues(alpha: 0.5),
             ),
             onPressed: () => setState(() => _isPasswordVisible = !_isPasswordVisible),
           ),
@@ -502,7 +502,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
         child: Text(
           'نسيت كلمة المرور؟',
           style: TextStyle(
-            color: Colors.white.withOpacity(0.7),
+            color: Colors.white.withValues(alpha: 0.7),
             fontFamily: 'Changa',
             fontSize: 14,
           ),
@@ -521,7 +521,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
           backgroundColor: AppTheme.error,
           foregroundColor: Colors.white,
           elevation: 8,
-          shadowColor: AppTheme.error.withOpacity(0.5),
+          shadowColor: AppTheme.error.withValues(alpha: 0.5),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),
@@ -554,7 +554,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
         padding: const EdgeInsets.symmetric(vertical: 12),
         decoration: BoxDecoration(
           border: Border.all(
-            color: Colors.white.withOpacity(0.3),
+            color: Colors.white.withValues(alpha: 0.3),
           ),
           borderRadius: BorderRadius.circular(12),
         ),
@@ -563,14 +563,14 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
           children: [
             Icon(
               Icons.person_outline,
-              color: Colors.white.withOpacity(0.7),
+              color: Colors.white.withValues(alpha: 0.7),
               size: 20,
             ),
             const SizedBox(width: 8),
             Text(
               'دخول بدون نت',
               style: TextStyle(
-                color: Colors.white.withOpacity(0.7),
+                color: Colors.white.withValues(alpha: 0.7),
                 fontFamily: 'Changa',
                 fontSize: 14,
               ),
@@ -579,7 +579,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
             Text(
               'لا تمتلك حساب؟',
               style: TextStyle(
-                color: Colors.white.withOpacity(0.5),
+                color: Colors.white.withValues(alpha: 0.5),
                 fontFamily: 'Changa',
                 fontSize: 12,
               ),
@@ -641,10 +641,10 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
             width: 56,
             height: 56,
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.1),
+              color: Colors.white.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(16),
               border: Border.all(
-                color: Colors.white.withOpacity(0.2),
+                color: Colors.white.withValues(alpha: 0.2),
               ),
             ),
             child: Icon(
@@ -657,7 +657,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
           Text(
             label,
             style: TextStyle(
-              color: Colors.white.withOpacity(0.7),
+              color: Colors.white.withValues(alpha: 0.7),
               fontFamily: 'Changa',
               fontSize: 12,
             ),
@@ -706,14 +706,14 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
             'أدخل رقم موبايلك لإرسال رمز التحقق',
             style: TextStyle(
               fontSize: 14,
-              color: Colors.white.withOpacity(0.7),
+              color: Colors.white.withValues(alpha: 0.7),
               fontFamily: 'Changa',
             ),
           ),
           const SizedBox(height: 24),
           Container(
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.1),
+              color: Colors.white.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(16),
             ),
             child: TextField(
@@ -722,7 +722,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
               style: const TextStyle(color: Colors.white, fontFamily: 'Changa'),
               decoration: InputDecoration(
                 hintText: 'رقم الموبايل',
-                hintStyle: TextStyle(color: Colors.white.withOpacity(0.5), fontFamily: 'Changa'),
+                hintStyle: TextStyle(color: Colors.white.withValues(alpha: 0.5), fontFamily: 'Changa'),
                 prefixIcon: const Icon(Icons.phone_android, color: AppTheme.goldPrimary),
                 border: InputBorder.none,
                 contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),

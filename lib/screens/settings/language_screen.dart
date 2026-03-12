@@ -40,13 +40,13 @@ class _LanguageScreenState extends State<LanguageScreen> {
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: isSelected
-                    ? AppTheme.goldColor.withOpacity(0.2)
+                    ? AppTheme.goldColor.withValues(alpha: 0.2)
                     : Theme.of(context).cardColor,
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(
                   color: isSelected
                       ? AppTheme.goldColor
-                      : Colors.grey.withOpacity(0.3),
+                      : Colors.grey.withValues(alpha: 0.3),
                 ),
               ),
               child: Row(

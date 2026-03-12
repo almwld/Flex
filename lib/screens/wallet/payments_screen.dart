@@ -132,7 +132,7 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
                         Container(
                           padding: const EdgeInsets.all(12),
                           decoration: BoxDecoration(
-                            color: category['color'].withOpacity(0.2),
+                            color: category['color'].withValues(alpha: 0.2),
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
@@ -195,7 +195,7 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
                       Container(
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          color: payment['color'].withOpacity(0.2),
+                          color: payment['color'].withValues(alpha: 0.2),
                           shape: BoxShape.circle,
                         ),
                         child: Icon(

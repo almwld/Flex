@@ -237,8 +237,8 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
               color: isPositive
-                  ? Colors.green.withOpacity(0.2)
-                  : Colors.red.withOpacity(0.2),
+                  ? Colors.green.withValues(alpha: 0.2)
+                  : Colors.red.withValues(alpha: 0.2),
               shape: BoxShape.circle,
             ),
             child: Icon(
@@ -285,7 +285,7 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
-                  color: Colors.green.withOpacity(0.2),
+                  color: Colors.green.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(

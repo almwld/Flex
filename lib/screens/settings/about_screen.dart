@@ -29,7 +29,7 @@ class AboutScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(30),
                 boxShadow: [
                   BoxShadow(
-                    color: AppTheme.goldColor.withOpacity(0.4),
+                    color: AppTheme.goldColor.withValues(alpha: 0.4),
                     blurRadius: 20,
                     spreadRadius: 5,
                   ),
@@ -155,7 +155,7 @@ class AboutScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: AppTheme.goldColor.withOpacity(0.2),
+                    color: AppTheme.goldColor.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Icon(

@@ -94,7 +94,7 @@ class _WithdrawScreenState extends State<WithdrawScreen> {
                       margin: const EdgeInsets.only(right: 12),
                       decoration: BoxDecoration(
                         color: isSelected
-                            ? AppTheme.goldColor.withOpacity(0.2)
+                            ? AppTheme.goldColor.withValues(alpha: 0.2)
                             : (isDark ? AppTheme.darkCard : AppTheme.lightCard),
                         borderRadius: BorderRadius.circular(16),
                         border: Border.all(
@@ -190,7 +190,7 @@ class _WithdrawScreenState extends State<WithdrawScreen> {
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
                       color: isSelected
-                          ? method['color'].withOpacity(0.2)
+                          ? method['color'].withValues(alpha: 0.2)
                           : (isDark ? AppTheme.darkCard : AppTheme.lightCard),
                       borderRadius: BorderRadius.circular(16),
                       border: Border.all(
@@ -204,7 +204,7 @@ class _WithdrawScreenState extends State<WithdrawScreen> {
                         Container(
                           padding: const EdgeInsets.all(12),
                           decoration: BoxDecoration(
-                            color: method['color'].withOpacity(0.2),
+                            color: method['color'].withValues(alpha: 0.2),
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
@@ -251,9 +251,9 @@ class _WithdrawScreenState extends State<WithdrawScreen> {
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: isDark ? Colors.amber.withOpacity(0.1) : Colors.amber.withOpacity(0.05),
+                color: isDark ? Colors.amber.withValues(alpha: 0.1) : Colors.amber.withValues(alpha: 0.05),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.amber.withOpacity(0.3)),
+                border: Border.all(color: Colors.amber.withValues(alpha: 0.3)),
               ),
               child: Row(
                 children: [

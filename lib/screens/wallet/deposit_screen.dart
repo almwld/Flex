@@ -89,7 +89,7 @@ class _DepositScreenState extends State<DepositScreen> {
                       margin: const EdgeInsets.only(right: 12),
                       decoration: BoxDecoration(
                         color: isSelected
-                            ? AppTheme.goldColor.withOpacity(0.2)
+                            ? AppTheme.goldColor.withValues(alpha: 0.2)
                             : (isDark ? AppTheme.darkCard : AppTheme.lightCard),
                         borderRadius: BorderRadius.circular(16),
                         border: Border.all(
@@ -185,7 +185,7 @@ class _DepositScreenState extends State<DepositScreen> {
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
                       color: isSelected
-                          ? method['color'].withOpacity(0.2)
+                          ? method['color'].withValues(alpha: 0.2)
                           : (isDark ? AppTheme.darkCard : AppTheme.lightCard),
                       borderRadius: BorderRadius.circular(16),
                       border: Border.all(
@@ -199,7 +199,7 @@ class _DepositScreenState extends State<DepositScreen> {
                         Container(
                           padding: const EdgeInsets.all(12),
                           decoration: BoxDecoration(
-                            color: method['color'].withOpacity(0.2),
+                            color: method['color'].withValues(alpha: 0.2),
                             shape: BoxShape.circle,
                           ),
                           child: Icon(

@@ -124,7 +124,7 @@ class _HelpSupportScreenState extends State<HelpSupportScreen> {
                           Container(
                             padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
-                              color: method['color'].withOpacity(0.2),
+                              color: method['color'].withValues(alpha: 0.2),
                               shape: BoxShape.circle,
                             ),
                             child: Icon(

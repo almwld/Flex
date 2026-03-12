@@ -84,7 +84,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      AppTheme.goldColor.withOpacity(0.3),
+                      AppTheme.goldColor.withValues(alpha: 0.3),
                       isDark ? AppTheme.darkBackground : AppTheme.lightBackground,
                     ],
                     begin: Alignment.topCenter,
@@ -219,7 +219,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Container(
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                      color: Colors.indigo.withOpacity(0.2),
+                      color: Colors.indigo.withValues(alpha: 0.2),
                       shape: BoxShape.circle,
                     ),
                     child: const Icon(
@@ -346,7 +346,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: item['color'].withOpacity(0.2),
+                color: item['color'].withValues(alpha: 0.2),
                 shape: BoxShape.circle,
               ),
               child: Icon(

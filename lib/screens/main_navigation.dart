@@ -69,7 +69,7 @@ class _MainNavigationState extends State<MainNavigation>
           color: isDark ? AppTheme.darkSurface : AppTheme.lightSurface,
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.2),
+              color: Colors.black.withValues(alpha: 0.2),
               blurRadius: 20,
               offset: const Offset(0, -5),
             ),
@@ -106,7 +106,7 @@ class _MainNavigationState extends State<MainNavigation>
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         decoration: BoxDecoration(
           color: isSelected 
-              ? AppTheme.goldPrimary.withOpacity(0.15) 
+              ? AppTheme.goldPrimary.withValues(alpha: 0.15) 
               : Colors.transparent,
           borderRadius: BorderRadius.circular(16),
         ),
@@ -160,7 +160,7 @@ class _MainNavigationState extends State<MainNavigation>
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: AppTheme.goldPrimary.withOpacity(0.4),
+              color: AppTheme.goldPrimary.withValues(alpha: 0.4),
               blurRadius: 15,
               offset: const Offset(0, 5),
             ),

@@ -269,12 +269,12 @@ class _SplashScreenState extends State<SplashScreen>
         borderRadius: BorderRadius.circular(40),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.goldPrimary.withOpacity(0.5),
+            color: AppTheme.goldPrimary.withValues(alpha: 0.5),
             blurRadius: 40,
             spreadRadius: 10,
           ),
           BoxShadow(
-            color: AppTheme.goldPrimary.withOpacity(0.3),
+            color: AppTheme.goldPrimary.withValues(alpha: 0.3),
             blurRadius: 80,
             spreadRadius: 20,
           ),
@@ -325,10 +325,10 @@ class _SplashScreenState extends State<SplashScreen>
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.05),
+        color: Colors.white.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: AppTheme.goldPrimary.withOpacity(0.3),
+          color: AppTheme.goldPrimary.withValues(alpha: 0.3),
         ),
       ),
       child: const Text(
@@ -348,7 +348,7 @@ class _SplashScreenState extends State<SplashScreen>
       height: 40,
       child: CircularProgressIndicator(
         valueColor: AlwaysStoppedAnimation<Color>(
-          AppTheme.goldPrimary.withOpacity(0.8),
+          AppTheme.goldPrimary.withValues(alpha: 0.8),
         ),
         strokeWidth: 3,
       ),
@@ -362,7 +362,7 @@ class _SplashScreenState extends State<SplashScreen>
           'الإصدار 2.0.0',
           style: TextStyle(
             fontSize: 12,
-            color: Colors.white.withOpacity(0.5),
+            color: Colors.white.withValues(alpha: 0.5),
             fontFamily: 'Changa',
           ),
         ),
@@ -371,7 +371,7 @@ class _SplashScreenState extends State<SplashScreen>
           'تم التطوير بكل ❤️ في اليمن',
           style: TextStyle(
             fontSize: 11,
-            color: Colors.white.withOpacity(0.4),
+            color: Colors.white.withValues(alpha: 0.4),
             fontFamily: 'Changa',
           ),
         ),

@@ -156,16 +156,16 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
         decoration: BoxDecoration(
           color: isRead
               ? (isDark ? AppTheme.darkCard : AppTheme.lightCard)
-              : AppTheme.goldColor.withOpacity(0.1),
+              : AppTheme.goldColor.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(16),
-          border: !isRead ? Border.all(color: AppTheme.goldColor.withOpacity(0.3)) : null,
+          border: !isRead ? Border.all(color: AppTheme.goldColor.withValues(alpha: 0.3)) : null,
         ),
         child: Row(
           children: [
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: notification['color'].withOpacity(0.2),
+                color: notification['color'].withValues(alpha: 0.2),
                 shape: BoxShape.circle,
               ),
               child: Icon(

@@ -405,7 +405,7 @@ class _AddAdScreenState extends State<AddAdScreen> {
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: AppTheme.goldColor.withOpacity(0.2),
+              color: AppTheme.goldColor.withValues(alpha: 0.2),
               shape: BoxShape.circle,
             ),
             child: Icon(

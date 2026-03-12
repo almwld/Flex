@@ -148,9 +148,9 @@ class _WalletScreenState extends State<WalletScreen> {
               margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: Colors.red[900]?.withOpacity(0.2),
+                color: Colors.red[900]?.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.red.withOpacity(0.3)),
+                border: Border.all(color: Colors.red.withValues(alpha: 0.3)),
               ),
               child: Row(
                 children: [
@@ -296,7 +296,7 @@ class _WalletScreenState extends State<WalletScreen> {
         gradient: LinearGradient(
           colors: [
             card['color'],
-            card['color'].withOpacity(0.8),
+            card['color'].withValues(alpha: 0.8),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -304,7 +304,7 @@ class _WalletScreenState extends State<WalletScreen> {
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: card['color'].withOpacity(0.4),
+            color: card['color'].withValues(alpha: 0.4),
             blurRadius: 20,
             offset: const Offset(0, 10),
           ),
@@ -319,7 +319,7 @@ class _WalletScreenState extends State<WalletScreen> {
             child: Icon(
               Icons.account_balance_wallet,
               size: 180,
-              color: Colors.white.withOpacity(0.1),
+              color: Colors.white.withValues(alpha: 0.1),
             ),
           ),
           // المحتوى
@@ -343,7 +343,7 @@ class _WalletScreenState extends State<WalletScreen> {
                         Text(
                           card['code'],
                           style: TextStyle(
-                            color: Colors.white.withOpacity(0.9),
+                            color: Colors.white.withValues(alpha: 0.9),
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                           ),
@@ -357,13 +357,13 @@ class _WalletScreenState extends State<WalletScreen> {
                         vertical: 6,
                       ),
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.2),
+                        color: Colors.white.withValues(alpha: 0.2),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Text(
                         card['type'],
                         style: TextStyle(
-                          color: Colors.white.withOpacity(0.9),
+                          color: Colors.white.withValues(alpha: 0.9),
                           fontSize: 12,
                         ),
                       ),
@@ -375,7 +375,7 @@ class _WalletScreenState extends State<WalletScreen> {
                 Text(
                   card['name'],
                   style: TextStyle(
-                    color: Colors.white.withOpacity(0.8),
+                    color: Colors.white.withValues(alpha: 0.8),
                     fontSize: 14,
                   ),
                 ),
@@ -397,7 +397,7 @@ class _WalletScreenState extends State<WalletScreen> {
                     Text(
                       card['currency'],
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.8),
+                        color: Colors.white.withValues(alpha: 0.8),
                         fontSize: 18,
                       ),
                     ),
@@ -410,7 +410,7 @@ class _WalletScreenState extends State<WalletScreen> {
                   child: IconButton(
                     icon: Icon(
                       _isHidden ? Icons.visibility_off : Icons.visibility,
-                      color: Colors.white.withOpacity(0.7),
+                      color: Colors.white.withValues(alpha: 0.7),
                     ),
                     onPressed: () {
                       setState(() {
@@ -451,7 +451,7 @@ class _WalletScreenState extends State<WalletScreen> {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: service['color'].withOpacity(0.2),
+                color: service['color'].withValues(alpha: 0.2),
                 shape: BoxShape.circle,
               ),
               child: Icon(
@@ -485,8 +485,8 @@ class _WalletScreenState extends State<WalletScreen> {
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: isPositive
-              ? Colors.green.withOpacity(0.2)
-              : Colors.red.withOpacity(0.2),
+              ? Colors.green.withValues(alpha: 0.2)
+              : Colors.red.withValues(alpha: 0.2),
           shape: BoxShape.circle,
         ),
         child: Icon(

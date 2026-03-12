@@ -71,9 +71,9 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.green.withOpacity(0.1),
+                color: Colors.green.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.green.withOpacity(0.3)),
+                border: Border.all(color: Colors.green.withValues(alpha: 0.3)),
               ),
               child: Row(
                 children: [
@@ -173,7 +173,7 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: color.withOpacity(0.2),
+                color: color.withValues(alpha: 0.2),
                 shape: BoxShape.circle,
               ),
               child: Icon(icon, color: color),
@@ -229,7 +229,7 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: method['color'].withOpacity(0.2),
+              color: method['color'].withValues(alpha: 0.2),
               shape: BoxShape.circle,
             ),
             child: Icon(method['icon'], color: method['color']),
@@ -255,7 +255,7 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
                           vertical: 2,
                         ),
                         decoration: BoxDecoration(
-                          color: AppTheme.goldColor.withOpacity(0.2),
+                          color: AppTheme.goldColor.withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: const Text(

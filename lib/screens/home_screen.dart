@@ -203,7 +203,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Icon(
                               slide['icon'],
                               size: 150,
-                              color: Colors.white.withOpacity(0.1),
+                              color: Colors.white.withValues(alpha: 0.1),
                             ),
                           ),
                           // المحتوى
@@ -219,13 +219,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                     vertical: 6,
                                   ),
                                   decoration: BoxDecoration(
-                                    color: Colors.white.withOpacity(0.2),
+                                    color: Colors.white.withValues(alpha: 0.2),
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   child: Text(
                                     'عرض خاص',
                                     style: TextStyle(
-                                      color: Colors.white.withOpacity(0.9),
+                                      color: Colors.white.withValues(alpha: 0.9),
                                       fontSize: 12,
                                     ),
                                   ),
@@ -244,7 +244,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Text(
                                   slide['subtitle'],
                                   style: TextStyle(
-                                    color: Colors.white.withOpacity(0.9),
+                                    color: Colors.white.withValues(alpha: 0.9),
                                     fontSize: 14,
                                   ),
                                   textAlign: TextAlign.right,
@@ -500,7 +500,7 @@ class _HomeScreenState extends State<HomeScreen> {
         color: isDark ? AppTheme.darkCard : AppTheme.lightCard,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: AppTheme.goldColor.withOpacity(0.3),
+          color: AppTheme.goldColor.withValues(alpha: 0.3),
         ),
       ),
       child: Column(
@@ -530,7 +530,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         vertical: 4,
                       ),
                       decoration: BoxDecoration(
-                        color: Colors.red.withOpacity(0.9),
+                        color: Colors.red.withValues(alpha: 0.9),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Row(
@@ -583,7 +583,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           vertical: 4,
                         ),
                         decoration: BoxDecoration(
-                          color: AppTheme.goldColor.withOpacity(0.2),
+                          color: AppTheme.goldColor.withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Text(
