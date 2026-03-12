@@ -1,0 +1,220 @@
+# FLEX YEMEN - Codemagic CI/CD Configuration
+# Professional CI/CD pipeline for global e-commerce platform
+
+workflows:
+  # Android Production Build
+  android-production:
+    name: Android Production Build
+    instance_type: mac_mini_m1
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+      groups:
+        - firebase_credentials
+        - google_play_credentials
+    cache:
+      cache_paths:
+        - $FLUTTER_ROOT/.pub-cache
+        - $HOME/.gradle/caches
+    triggering:
+      events:
+        - push
+        - tag
+      branch_patterns:
+        - pattern: main
+          include: true
+          source: true
+        - pattern: release/*
+          include: true
+          source: true
+    scripts:
+      - name: Get Flutter packages
+        script: |
+          flutter packages pub get
+      
+      - name: Flutter analyze
+        script: |
+          flutter analyze
+      
+      - name: Run tests
+        script: |
+          flutter test
+      
+      - name: Build Android APK
+        script: |
+          flutter build apk --release \
+            --build-name=2.0.0 \
+            --build-number=$(($(google-play get-latest-build-number --package-name "com.flexyemen.app") + 1))
+      
+      - name: Build Android App Bundle
+        script: |
+          flutter build appbundle --release \
+            --build-name=2.0.0 \
+            --build-number=$(($(google-play get-latest-build-number --package-name "com.flexyemen.app") + 1))
+    artifacts:
+      - build/app/outputs/flutter-apk/*.apk
+      - build/app/outputs/bundle/release/*.aab
+      - build/**/outputs/**/mapping.txt
+    publishing:
+      email:
+        recipients:
+          - dev@flexyemen.com
+          - admin@flexyemen.com
+        notify:
+          success: true
+          failure: true
+      google_play:
+        credentials: $GOOGLE_PLAY_CREDENTIALS
+        track: production
+        submit_as_draft: false
+
+  # iOS Production Build
+  ios-production:
+    name: iOS Production Build
+    instance_type: mac_mini_m1
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+      groups:
+        - app_store_credentials
+        - firebase_credentials
+    cache:
+      cache_paths:
+        - $FLUTTER_ROOT/.pub-cache
+        - $HOME/Library/Caches/CocoaPods
+    triggering:
+      events:
+        - push
+        - tag
+      branch_patterns:
+        - pattern: main
+          include: true
+          source: true
+    scripts:
+      - name: Get Flutter packages
+        script: |
+          flutter packages pub get
+      
+      - name: Install pods
+        script: |
+          cd ios && pod install --repo-update
+      
+      - name: Flutter analyze
+        script: |
+          flutter analyze
+      
+      - name: Run tests
+        script: |
+          flutter test
+      
+      - name: Build iOS
+        script: |
+          flutter build ipa --release \
+            --build-name=2.0.0 \
+            --build-number=$(($(app-store-connect get-latest-app-store-build-number --app-id "1234567890") + 1))
+    artifacts:
+      - build/ios/ipa/*.ipa
+    publishing:
+      email:
+        recipients:
+          - dev@flexyemen.com
+          - admin@flexyemen.com
+        notify:
+          success: true
+          failure: true
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true
+        submit_to_app_store: false
+
+  # Web Production Build
+  web-production:
+    name: Web Production Build
+    instance_type: linux_x2
+    max_build_duration: 30
+    environment:
+      flutter: stable
+    cache:
+      cache_paths:
+        - $FLUTTER_ROOT/.pub-cache
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: main
+          include: true
+          source: true
+    scripts:
+      - name: Get Flutter packages
+        script: |
+          flutter packages pub get
+      
+      - name: Flutter analyze
+        script: |
+          flutter analyze
+      
+      - name: Build Web
+        script: |
+          flutter build web --release --dart-define=FLAVOR=production
+    artifacts:
+      - build/web/**
+    publishing:
+      firebase:
+        firebase_token: $FIREBASE_TOKEN
+        ios:
+          app_id: 1:1234567890:ios:abcdef
+        android:
+          app_id: 1:1234567890:android:abcdef
+        web:
+          app_id: 1:1234567890:web:abcdef
+
+  # Development Build
+  development-build:
+    name: Development Build
+    instance_type: linux
+    max_build_duration: 30
+    environment:
+      flutter: stable
+    cache:
+      cache_paths:
+        - $FLUTTER_ROOT/.pub-cache
+    triggering:
+      events:
+        - push
+        - pull_request
+      branch_patterns:
+        - pattern: develop
+          include: true
+          source: true
+        - pattern: feature/*
+          include: true
+          source: true
+    scripts:
+      - name: Get Flutter packages
+        script: |
+          flutter packages pub get
+      
+      - name: Flutter analyze
+        script: |
+          flutter analyze
+      
+      - name: Run tests
+        script: |
+          flutter test
+      
+      - name: Build Android APK (Debug)
+        script: |
+          flutter build apk --debug
+    artifacts:
+      - build/app/outputs/flutter-apk/*.apk
+    publishing:
+      email:
+        recipients:
+          - dev@flexyemen.com
+        notify:
+          success: false
+          failure: true
