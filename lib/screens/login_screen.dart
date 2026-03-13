@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '../theme/app_theme.dart';
 import 'main_navigation.dart';
 import 'register_screen.dart';
-import 'merchant_register_screen.dart';
+//import 'merchant_register_screen.dart';
 
 enum UserType { merchant, customer }
 
@@ -287,7 +285,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
             borderRadius: BorderRadius.circular(30),
             boxShadow: [
               BoxShadow(
-                color: AppTheme.goldPrimary.withOpacity(0.3 + (_pulseController.value * 0.2)),
+                color: AppTheme.goldPrimary.withValues(alpha:0.3 + (_pulseController.value * 0.2)),
                 blurRadius: 30 + (_pulseController.value * 10),
                 spreadRadius: 2 + (_pulseController.value * 3),
               ),
@@ -671,7 +669,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: const BoxDecoration(
-        color: AppTheme.darkSurface,
+        color: AppTheme.Color(0xFF1E1E1E)//darkSurface,
         borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
       ),
       child: Column(

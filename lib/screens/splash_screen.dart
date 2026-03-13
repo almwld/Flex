@@ -239,10 +239,10 @@ class _SplashScreenState extends State<SplashScreen>
                 height: size,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: AppTheme.goldPrimary.withOpacity(opacity),
+                  color: AppTheme.goldPrimary.withValues(alpha:opacity),
                   boxShadow: [
                     BoxShadow(
-                      color: AppTheme.goldPrimary.withOpacity(opacity * 0.5),
+                      color: AppTheme.goldPrimary.withValues(alpha:opacity * 0.5),
                       blurRadius: size * 2,
                       spreadRadius: size * 0.5,
                     ),

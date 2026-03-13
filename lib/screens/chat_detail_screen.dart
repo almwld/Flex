@@ -144,7 +144,7 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: isDark ? AppTheme.darkSurface : AppTheme.lightSurface,
+              color: isDark ? AppTheme.Color(0xFF1E1E1E)//darkSurface : AppTheme.Color(0xFFFFFFFF)//lightSurface,
               border: Border(
                 top: BorderSide(
                   color: isDark ? Colors.grey[800]! : Colors.grey[300]!,

@@ -13,7 +13,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _currentSlide = 0;
-  final CarouselSliderController _carouselController = CarouselSliderController();
+  final var _carouselController = var();
 
   // بيانات السلايدر
   final List<Map<String, dynamic>> _slides = [

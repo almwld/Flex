@@ -159,7 +159,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   color: Colors.green,
                   shape: BoxShape.circle,
                   border: Border.all(
-                    color: isDark ? AppTheme.darkBackground : AppTheme.lightBackground,
+                    color: isDark ? AppTheme.Color(0xFF121212)//darkBackground : AppTheme.Color(0xFFF5F5F5)//lightBackground,
                     width: 2,
                   ),
                 ),

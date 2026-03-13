@@ -85,7 +85,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   gradient: LinearGradient(
                     colors: [
                       AppTheme.goldColor.withValues(alpha: 0.3),
-                      isDark ? AppTheme.darkBackground : AppTheme.lightBackground,
+                      isDark ? AppTheme.Color(0xFF121212)//darkBackground : AppTheme.Color(0xFFF5F5F5)//lightBackground,
                     ],
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
@@ -245,7 +245,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         _isDarkMode = value;
                       });
                     },
-                    activeColor: AppTheme.goldColor,
+                    activeThumbColor: AppTheme.goldColor,
                   ),
                 ],
               ),

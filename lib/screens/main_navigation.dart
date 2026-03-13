@@ -66,7 +66,7 @@ class _MainNavigationState extends State<MainNavigation>
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: isDark ? AppTheme.darkSurface : AppTheme.lightSurface,
+          color: isDark ? AppTheme.Color(0xFF1E1E1E)//darkSurface : AppTheme.Color(0xFFFFFFFF)//lightSurface,
           boxShadow: [
             BoxShadow(
               color: Colors.black.withValues(alpha: 0.2),

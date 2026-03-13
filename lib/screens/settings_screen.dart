@@ -48,7 +48,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       _notificationsEnabled = value;
                     });
                   },
-                  activeColor: AppTheme.goldColor,
+                  activeThumbColor: AppTheme.goldColor,
                 ),
                 onTap: () {
                   Navigator.of(context).push(
@@ -90,7 +90,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       _biometricEnabled = value;
                     });
                   },
-                  activeColor: AppTheme.goldColor,
+                  activeThumbColor: AppTheme.goldColor,
                 ),
               ),
               const Divider(height: 1),
@@ -158,7 +158,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       _darkModeEnabled = value;
                     });
                   },
-                  activeColor: AppTheme.goldColor,
+                  activeThumbColor: AppTheme.goldColor,
                 ),
               ),
             ]),
